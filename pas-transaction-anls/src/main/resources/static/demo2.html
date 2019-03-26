@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="css/styles.css">
-        <!--<script src="js/jQuery3/jquery-3.3.1.min.js"></script>-->
-        <!--<script src="js/jQuery3/jquery.animateNumber.min.js"></script>-->
-        <!--<script src="js/echarts4/echarts.min.js"></script>-->
-        <!--<script src="js/echarts4/map/china.js"></script>-->
-        <!--<script src="js/echarts4/wordcloud//echarts-wordcloud.min.js"></script>-->
+        <script src="js/jQuery3/jquery-3.3.1.min.js"></script>
+        <script src="js/jQuery3/jquery.animateNumber.min.js"></script>
+        <script src="js/echarts4/echarts.min.js"></script>
+        <script src="js/echarts4/map/china.js"></script>
+        <script src="js/echarts4/wordcloud//echarts-wordcloud.min.js"></script>
     </head>
     <body>
        <h2 class="title">全省异常交易状况</h2>
        <div class="time-box clearfix">
            <p class="time-box-title">时间</p>
-           <div class="time-list"></div>
-           <div class="time-list"></div>
+           <div class="time-list">
+               <input type="date"  placeholder="xxxx年xx月xx日" />
+           </div>
+           <span  class="line">—</span>
+           <div class="time-list">
+               <input type="date" id="dpd2" placeholder="xxxx年xx月xx日" />
+           </div>
            <p class="time-box-title">机构</p>
-           <div class="time-list"></div>
+           <input type="text" id="dpd3" placeholder="" />
        </div>
        <!-- 全省异常交易状况  -->
        <div  class="yizhang-box">
@@ -25,15 +29,33 @@
            <ul class="yizhang-ul">
                <li>
                    <p class="s-title">异常交易金额（万元）</p>
-                   <h4 class="l-title">8889</h4>
+                   <h4 class="l-title" id="num1">0</h4>
+                   <div  class="cslb-box" >
+                       <h4>38.5%</h4>
+                       <p class="cslb">
+                           <i class="cslb-1" style="width:60%"></i>
+                       </p>
+                   </div>
                </li>
                <li>
                     <p class="s-title">异常交易金额（万元）</p>
-                    <h4 class="l-title">8889</h4>
+                    <h4 class="l-title" id="num2">0</h4>
+                       <div  class="cslb-box" >
+                           <h4>38.5%</h4>
+                           <p class="cslb">
+                               <i class="cslb-2" style="width:80%"></i>
+                           </p>
+                       </div>
                 </li>
                 <li>
                         <p class="s-title">异常交易金额（万元）</p>
-                        <h4 class="l-title">8889</h4>
+                        <h4 class="l-title" id="num3">0</h4>
+                        <div  class="cslb-box" >
+                            <h4>38.5%</h4>
+                            <p class="cslb">
+                                <i class="cslb-3" style="width:90%"></i>
+                            </p>
+                        </div>
                 </li>
            </ul>
 
@@ -65,26 +87,33 @@
             <div class="t-div-content"></div>
        </div>
 <!-- 地图 -->
-       <!--<div  class="div-map">-->
-           <!--<div id="echarts"></div>-->
+       <div  class="div-map">
+           <div id="echarts"></div>
+       </div>
+       
+        <!--<div class="region-list">-->
+           <!--<div>-->
+                <!--<em>地区</em>-->
+                <!--<div>异常交易金额（万元）</div>-->
+                <!--<div>异常交易笔数（笔）</div>-->
+                <!--<div>异常交易点数（个）</div>-->
+           <!--</div>-->
+           <!--<ul>-->
+               <!--<li>-->
+
+               <!--</li>-->
+           <!--</ul>-->
+
+
        <!--</div>-->
 
-        <div class="region-list">
-           <div>
-                <em>地区</em>
-                <div>异常交易金额（万元）</div>
-                <div>异常交易笔数（笔）</div>
-                <div>异常交易点数（个）</div>
-           </div>
-           <ul>
-               <li>
-
-               </li>
-           </ul>
-
-
-       </div>
-
     </body>
-<!--<script src="js/gd.js"></script>-->
+
+
+<script src="js/gd.js"></script>
+<script>
+    $('#num1').animateNumber({ number: 896.71});
+    $('#num2').animateNumber({ number: 895 });
+    $('#num3').animateNumber({ number: 165 });
+</script>
 </html>

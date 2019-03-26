@@ -118,6 +118,7 @@ body{
   .time-box{
     position: absolute;
     top: 56px;
+    z-index: 99;
   }
   .time-box-title{
     float: left;
@@ -130,7 +131,7 @@ body{
     width: 154px;
     height: 40px;
     border: 1px solid #373e53;
-    margin-right: 18px;
+    margin-right: 9px;
   }
 
 /* 
@@ -146,11 +147,13 @@ body{
   }
   .common-h i{
     width: 4px;
-    height:15px;
+    height: 15px;
     border-radius: 5px;
     background: #f4c75d;
-    display:inline-block;
+    display: block;
     margin-right: 10px;
+    float: left;
+    margin-top: 4px;
 
   }
 .yizhang-ul{
@@ -170,16 +173,21 @@ body{
 .s-title{
   color: #818593;
   font-size: 14px;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   margin-top: 14px;
 }
 .l-title{
   color: #287be8;
   font-size:40px;
-  margin-bottom: 16px;
+  /*margin-bottom: 8px;*/
   font-family: Arial, Helvetica, sans-serif
 }
-
+.cslb-box h4{
+  font-weight: normal;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #ddc400;
+}
 .s-div{
   position: absolute;
   top: 340px;
@@ -215,4 +223,133 @@ body{
 #echarts{
   width: 1330px;
   height: 1066px;
+}
+#laydateInput{
+width: 154px;
+  height: 40px;
+  background: transparent;
+  color: #fff;
+}
+.time-list input{
+  height: 40px;
+  line-height: 40px;
+  font-family:微软雅黑;
+  width: 150px;
+}
+input{
+  color: #fff;
+
+}
+.line{
+  color: #373e53;
+  height: 40px;
+  line-height: 40px;
+  display: block;
+  float: left;
+  margin-right:9px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{ -webkit-appearance: none !important;}
+input::-webkit-input-placeholder {
+   color: #fff;
+}
+/* Mozilla Firefox 4 to 18 */
+input:-moz-placeholder {
+   color: #fff;
+}
+#dpd3{
+  height: 40px;
+  line-height: 40px;
+  width: 192px;
+  float: left;
+  border: 1px solid #373e53;
+}
+/* Mozilla Firefox 19+ */
+input::-moz-placeholder {
+   color: #fff;
+}
+/* Internet Explorer 10+ */
+input:-ms-input-placeholder {
+  color: #fff;
+}
+
+input{
+  background: transparent;
+  padding-left: 6px;
+}
+.cslb{
+  width: 160px;
+  background: #262d44;
+  height: 10px;
+  border-radius:6px;
+  line-height: 0px;
+  position: relative;
+}
+.cslb i{
+  position: absolute;
+  display: block;
+  height: 10px;
+  line-height: 0px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-animation: warn 3s ease-out;
+  -moz-animation: warn 3s ease-out;
+  animation: warn 3s ease-out;
+}
+.cslb-1{
+  background-image: -webkit-linear-gradient(top left, #0056ec, #7fe4ea);
+}
+
+.cslb-2{
+  background-image: -webkit-linear-gradient(top left, #e5732a, #fff500);
+}
+
+.cslb-3{
+  background-image: -webkit-linear-gradient(top left, #e04b4d, #eb9e7a);
+}
+
+@keyframes warn {
+  0% {
+    transform: scale(0);
+    opacity: 0.0;
+  }
+  25% {
+    transform: scale(0);
+    opacity: 0.1;
+  }
+  50% {
+    transform: scale(0.1);
+    opacity: 0.3;
+  }
+  75% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.0;
+  }
+}
+@-webkit-keyframes warn {
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 0.0;
+  }
+  25% {
+    -webkit-transform: scale(0);
+    opacity: 0.1;
+  }
+  50% {
+    -webkit-transform: scale(0.1);
+    opacity: 0.3;
+  }
+  75% {
+    -webkit-transform: scale(0.5);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 0.0;
+  }
 }
