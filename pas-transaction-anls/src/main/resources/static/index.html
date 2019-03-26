@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="js/jQuery3/jquery-3.3.1.min.js"></script>
+    <script src="js/jQuery3/jquery.animateNumber.min.js"></script>
+    <script src="js/echarts4/echarts.min.js"></script>
+    <script src="js/echarts4/map/china.js"></script>
+    <script src="js/echarts4/wordcloud//echarts-wordcloud.min.js"></script>
+</head>
+<body>
+<h2 class="title">全省异常交易状况</h2>
+<div class="time-box clearfix">
+    <p class="time-box-title">时间</p>
+    <div class="time-list">
+        <input type="text" id="laydateInput" placeholder="xxxx年xx月xx日" />
+    </div>
+    <div class="time-list"></div>
+    <p class="time-box-title">机构</p>
+    <div class="time-list"></div>
+</div>
+<!-- 全省异常交易状况  -->
+<div  class="yizhang-box">
+    <h3 class="common-h"><i></i>全省异常交易状况</h3>
+    <ul class="yizhang-ul">
+        <li>
+            <p class="s-title">异常交易金额（万元）</p>
+            <h4 class="l-title">8889</h4>
+        </li>
+        <li>
+            <p class="s-title">异常交易金额（万元）</p>
+            <h4 class="l-title">8889</h4>
+        </li>
+        <li>
+            <p class="s-title">异常交易金额（万元）</p>
+            <h4 class="l-title">8889</h4>
+        </li>
+    </ul>
+
+</div>
+
+
+<!-- 全省异常交易类型占比 -->
+<div class="s-div">
+    <div class="percent-box percent-s">
+        <h3 class="common-h"><i></i>全省异常交易类型占比</h3>
+        <div class="percent-content"></div>
+    </div>
+
+    <div class="percent-box percent-s">
+        <h3 class="common-h"><i></i>全省异常交易类型占比</h3>
+        <div class="percent-content"></div>
+    </div>
+</div>
+
+<!-- 全省异常交易类型top5 -->
+<div class="f-div">
+    <h3 class="common-h"><i></i>全省异常交易类型top5</h3>
+    <div class="f-div-content"></div>
+</div>
+
+
+<div class="t-div">
+    <h3 class="common-h"><i></i>全省异常交易类型top5</h3>
+    <div class="t-div-content"></div>
+</div>
+<!-- 地图 -->
+<div  class="div-map">
+    <div id="echarts"></div>
+</div>
+
+<!--<div class="region-list">-->
+<!--<div>-->
+<!--<em>地区</em>-->
+<!--<div>异常交易金额（万元）</div>-->
+<!--<div>异常交易笔数（笔）</div>-->
+<!--<div>异常交易点数（个）</div>-->
+<!--</div>-->
+<!--<ul>-->
+<!--<li>-->
+
+<!--</li>-->
+<!--</ul>-->
+
+
+<!--</div>-->
+
+</body>
+<script src="js/gd.js"></script>
+</html>
