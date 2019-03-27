@@ -85,9 +85,9 @@ button {
   padding: 0;
   border: 0;
   font-style: normal;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  /*-webkit-box-sizing: border-box;*/
+  /*-moz-box-sizing: border-box;*/
+  /*box-sizing: border-box;*/
 }
 li{
  list-style: none;
@@ -213,7 +213,9 @@ body{
 .region-list{
   position: absolute;
   right: 40px;
-  bottom: 20px;
+  top:650px;
+  /*height: 390px;*/
+  /*overflow-y: scroll;*/
 }
 .div-map{
   right: 97px;
@@ -360,4 +362,103 @@ input{
 .t-div-content{
   width: 470px;
   height: 210px;
+}
+.region-name{
+
+}
+.region-name li{
+  float: left;
+  background: #0d152f;
+  height: 52px;
+  line-height: 52px;
+
+}
+.li1{
+  width: 92px;
+  text-align: center;
+}
+.li2{
+  width: 160px;
+  padding-right: 36px;
+}
+.li3{
+  width: 160px;
+  padding-right: 36px;
+}
+.li4{
+  width: 160px;
+}
+.region-content{
+  overflow-y: scroll;
+  height: 300px;
+}
+.region-content::-webkit-scrollbar {
+  width: 12px;
+  background-color: #262f4b;
+  border-radius: 20px;
+}
+
+.region-content::-webkit-scrollbar-track {
+  background-color: #5b6587;
+}
+
+.region-content::-webkit-scrollbar-thumb {
+  background: #262f4b;
+  width: 12px;
+  border-radius: 20px;
+}
+.region-content li{
+  height: 52px;
+  line-height: 52px;
+}
+.region-content li div{
+  float: left;
+  text-align: center;
+  height: 52px;
+}
+.region-num{
+  line-height:32px;
+}
+.region-num i{
+  float: left;
+  display: block;
+}
+.region-num em{
+  float: right;
+  display: block;
+  color: #9b9eaa;
+}
+
+
+.cslbb{
+  width: 160px;
+  background: #262d44;
+  height: 10px;
+  border-radius:6px;
+  line-height: 0px;
+  position: relative;
+}
+.cslbb i{
+  position: absolute;
+  display: block;
+  height: 10px;
+  line-height: 0px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-animation: warn 3s ease-out;
+  -moz-animation: warn 3s ease-out;
+  animation: warn 3s ease-out;
+}
+.cslbb-1{
+  background-image: -webkit-linear-gradient(top left, #0056ec, #7fe4ea);
+}
+.cslbb-2{
+  background-image: -webkit-linear-gradient(top left, #fff500, #da6a2f);
+}
+.cslbb-3{
+  background-image: -webkit-linear-gradient(top left, #e0494c, #eba07b);
+}
+.region-content li:nth-child(2n){
+  background: #0d152f;
 }
