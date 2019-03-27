@@ -204,11 +204,11 @@ body{
 }
 .f-div{
   position: absolute;
-  top:510px;
+  top:580px;
 }
 .t-div{
   position: absolute;
-  top:700px;
+  top:808px;
 }
 .region-list{
   position: absolute;
@@ -352,4 +352,12 @@ input{
     -webkit-transform: scale(1);
     opacity: 0.0;
   }
+}
+#f-div-content{
+  width: 470px;
+  height: 210px;
+}
+.t-div-content{
+  width: 470px;
+  height: 210px;
 }

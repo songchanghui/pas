@@ -8,6 +8,11 @@
         <script src="js/echarts4/echarts.min.js"></script>
         <script src="js/echarts4/map/china.js"></script>
         <script src="js/echarts4/wordcloud//echarts-wordcloud.min.js"></script>
+        <script src="js/echar01.js"></script>
+        <script src="js/echar02.js"></script>
+        <script src="js/echar03.js"></script>
+        <script src="js/echar04.js"></script>
+
     </head>
     <body>
        <h2 class="title">全省异常交易状况</h2>
@@ -66,25 +71,25 @@
        <div class="s-div">
             <div class="percent-box percent-s">
                 <h3 class="common-h"><i></i>全省异常交易类型占比</h3>
-                <div class="percent-content"></div>
+                <div class="percent-content" id="PercentMain"></div>
             </div>
 
             <div class="percent-box percent-s">
                     <h3 class="common-h"><i></i>全省异常交易类型占比</h3>
-                    <div class="percent-content"></div>
+                    <div class="percent-content" id="PercentMain02"></div>
             </div>
        </div>
 
 <!-- 全省异常交易类型top5 -->
        <div class="f-div">
             <h3 class="common-h"><i></i>全省异常交易类型top5</h3>
-            <div class="f-div-content"></div>
+            <div class="f-div-content" id="f-div-content"></div>
        </div>
 
 
        <div class="t-div">
             <h3 class="common-h"><i></i>全省异常交易类型top5</h3>
-            <div class="t-div-content"></div>
+            <div class="t-div-content" id="t-div-content"></div>
        </div>
 <!-- 地图 -->
        <div  class="div-map">
