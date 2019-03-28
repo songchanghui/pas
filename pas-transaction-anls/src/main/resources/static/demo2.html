@@ -18,7 +18,7 @@
         <script type="text/javascript"  src="js/c.js"></script>
     </head>
     <body>
-       <h2 class="title">全省异常交易状况</h2>
+       <h2 class="title">异常交易检测</h2>
        <div class="time-box clearfix">
            <p class="time-box-title">时间</p>
            <div class="time-list">
@@ -33,10 +33,10 @@
        </div>
        <!-- 全省异常交易状况  -->
        <div  class="yizhang-box">
-           <h3 class="common-h"><i></i>全省异常交易状况</h3>
+           <h3 class="common-h"><i></i>异常交易-概况</h3>
            <ul class="yizhang-ul">
                <li>
-                   <p class="s-title">异常交易金额（万元）</p>
+                   <p class="s-title">异常交易-金额(万元)</p>
                    <h4 class="l-title" id="num1">0</h4>
                    <div  class="cslb-box" >
                        <h4>38.5%</h4>
@@ -46,7 +46,7 @@
                    </div>
                </li>
                <li>
-                    <p class="s-title">异常交易金额（万元）</p>
+                    <p class="s-title">异常交易-笔数(笔)</p>
                     <h4 class="l-title" id="num2">0</h4>
                        <div  class="cslb-box" >
                            <h4>38.5%</h4>
@@ -56,7 +56,7 @@
                        </div>
                 </li>
                 <li>
-                        <p class="s-title">异常交易金额（万元）</p>
+                        <p class="s-title">异常交易-服务点数(个)</p>
                         <h4 class="l-title" id="num3">0</h4>
                         <div  class="cslb-box" >
                             <h4>38.5%</h4>
@@ -73,25 +73,25 @@
        <!-- 全省异常交易类型占比 -->
        <div class="s-div">
             <div class="percent-box percent-s">
-                <h3 class="common-h"><i></i>全省异常交易类型占比</h3>
+                <h3 class="common-h"><i></i>异常交易-异常类型占比</h3>
                 <div class="percent-content" id="PercentMain"></div>
             </div>
 
             <div class="percent-box percent-s">
-                    <h3 class="common-h"><i></i>全省异常交易类型占比</h3>
+                    <h3 class="common-h"><i></i>异常交易-交易类型占比</h3>
                     <div class="percent-content" id="PercentMain02"></div>
             </div>
        </div>
 
 <!-- 全省异常交易类型top5 -->
        <div class="f-div">
-            <h3 class="common-h"><i></i>全省异常交易类型top5</h3>
+            <h3 class="common-h"><i></i>异常交易-市交易金额top5</h3>
             <div class="f-div-content" id="f-div-content"></div>
        </div>
 
 
        <div class="t-div">
-            <h3 class="common-h"><i></i>全省异常交易类型top5</h3>
+            <h3 class="common-h"><i></i>异常交易-市交易笔数top5</h3>
             <div class="t-div-content" id="t-div-content"></div>
        </div>
 <!-- 地图 -->
@@ -102,9 +102,9 @@
         <div class="region-list">
            <ul class="region-name clearfix">
                 <li class="li1">地区</li>
-                <li class="li2">异常交易金额（万元）</li>
-                <li class="li3">异常交易笔数（笔）</li>
-                <li class="li4">异常交易点数（个）</li>
+                <li class="li2">异常交易-金额(万元)</li>
+                <li class="li3">异常交易-笔数(笔)</li>
+                <li class="li4">异常交易-服务点数(个)</li>
            </ul>
            <ul class="region-content">
                <li class="clearfix">
@@ -378,11 +378,4 @@
 
     </body>
 
-
-<!--<script src="js/gd.js"></script>-->
-<script>
-    $('#num1').animateNumber({ number: 896.71});
-    $('#num2').animateNumber({ number: 895 });
-    $('#num3').animateNumber({ number: 165 });
-</script>
 </html>
