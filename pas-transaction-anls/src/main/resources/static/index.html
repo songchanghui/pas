@@ -9,14 +9,13 @@
     <script src="js/echarts4/echarts.min.js"></script>
     <script src="js/echarts4/map/china.js"></script>
     <script src="js/echarts4/wordcloud//echarts-wordcloud.min.js"></script>
-    <script src="js/echar01.js"></script>
-    <script src="js/echar02.js"></script>
-    <script src="js/echar03.js"></script>
-    <script src="js/echar04.js"></script>
+    <script src="js/unusual-transaction-type.js"></script>
+    <script src="js/unusual-transaction-transtype.js"></script>
+    <script src="js/unusual-transaction-amount.js"></script>
+    <script src="js/unusual-transaction-num.js"></script>
     <script type="text/javascript" src="js/map/guangdong1.js"></script>
     <script type="text/javascript" src="js/extendsMap.js"></script>
     <script type="text/javascript"  src="js/c.js"></script>
-    <script type="text/javascript"  src="js/unusual-transation.js"></script>
 </head>
 <body>
 <h2 class="title">异常交易检测</h2>
@@ -107,267 +106,35 @@
         <li class="li3">异常交易-笔数(笔)</li>
         <li class="li4">异常交易-服务点数(个)</li>
     </ul>
-    <ul class="region-content">
-        <li class="clearfix">
-            <div class="li1">广州</div>
+    <ul class="region-content" id="list">
+        <li class="clearfix" id="template0">
+            <div class="li1" id="region">广州</div>
             <div class="li2">
-
                 <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
+                    <i id="region-amount">1122</i>
+                    <em id="region-amount-percent0">10%</em>
                 </p>
                 <p class="cslbb">
-                    <i class="cslb-1" style="width:60%"></i>
+                    <i class="cslb-1" id="region-amount-percent1" style="width:60%"></i>
                 </p>
             </div>
-            <div class="li3">
+            <div class="li3" id="">
                 <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
+                    <i id="region-num">1122</i>
+                    <em id="region-num-percent0">10%</em>
                 </p>
                 <p class="cslbb">
-                    <i class="cslb-2" style="width:60%"></i>
+                    <i class="cslb-2" id="region-num-percent1" style="width:60%"></i>
                 </p>
 
             </div>
             <div class="li4">
                 <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
+                    <i id="region-service-num">1122</i>
+                    <em id="region-service-num-percent0">10%</em>
                 </p>
                 <p class="cslbb">
-                    <i class="cslb-3" style="width:60%"></i>
-                </p>
-
-            </div>
-        </li>
-        <li class="clearfix">
-            <div class="li1">广州</div>
-            <div class="li2">
-
-                <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-1" style="width:60%"></i>
-                </p>
-            </div>
-            <div class="li3">
-                <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-2" style="width:60%"></i>
-                </p>
-
-            </div>
-            <div class="li4">
-                <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-3" style="width:60%"></i>
-                </p>
-
-            </div>
-        </li>
-        <li class="clearfix">
-            <div class="li1">广州</div>
-            <div class="li2">
-
-                <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-1" style="width:60%"></i>
-                </p>
-            </div>
-            <div class="li3">
-                <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-2" style="width:60%"></i>
-                </p>
-
-            </div>
-            <div class="li4">
-                <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-3" style="width:60%"></i>
-                </p>
-
-            </div>
-        </li>
-        <li class="clearfix">
-            <div class="li1">广州</div>
-            <div class="li2">
-
-                <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-1" style="width:60%"></i>
-                </p>
-            </div>
-            <div class="li3">
-                <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-2" style="width:60%"></i>
-                </p>
-
-            </div>
-            <div class="li4">
-                <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-3" style="width:60%"></i>
-                </p>
-
-            </div>
-        </li>
-        <li class="clearfix">
-            <div class="li1">广州</div>
-            <div class="li2">
-
-                <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-1" style="width:60%"></i>
-                </p>
-            </div>
-            <div class="li3">
-                <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-2" style="width:60%"></i>
-                </p>
-
-            </div>
-            <div class="li4">
-                <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-3" style="width:60%"></i>
-                </p>
-
-            </div>
-        </li>
-        <li class="clearfix">
-            <div class="li1">广州</div>
-            <div class="li2">
-
-                <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-1" style="width:60%"></i>
-                </p>
-            </div>
-            <div class="li3">
-                <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-2" style="width:60%"></i>
-                </p>
-
-            </div>
-            <div class="li4">
-                <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-3" style="width:60%"></i>
-                </p>
-
-            </div>
-        </li>
-        <li class="clearfix">
-            <div class="li1">广州</div>
-            <div class="li2">
-
-                <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-1" style="width:60%"></i>
-                </p>
-            </div>
-            <div class="li3">
-                <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-2" style="width:60%"></i>
-                </p>
-
-            </div>
-            <div class="li4">
-                <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-3" style="width:60%"></i>
-                </p>
-
-            </div>
-        </li>
-        <li class="clearfix">
-            <div class="li1">广州</div>
-            <div class="li2">
-
-                <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-1" style="width:60%"></i>
-                </p>
-            </div>
-            <div class="li3">
-                <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-2" style="width:60%"></i>
-                </p>
-
-            </div>
-            <div class="li4">
-                <p class="region-num clearfix">
-                    <i>1122</i>
-                    <em>10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-3" style="width:60%"></i>
+                    <i class="cslb-3" id="region-service-num-percent1" style="width:60%"></i>
                 </p>
 
             </div>
@@ -376,5 +143,6 @@
 
 
 </div>
+<script type="text/javascript"  src="js/unusual-transation.js"></script>
 </body>
 </html>
