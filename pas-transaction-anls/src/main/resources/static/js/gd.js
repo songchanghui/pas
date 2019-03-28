@@ -26,7 +26,9 @@ $(function() {
       '揭阳市':[116.372710,23.549720],
       '云浮市':[112.044530,22.915250]
     }
-    var data = [{
+    var data = 
+      [
+      {
       name: '广州市',
       value: 199
     },
@@ -110,6 +112,7 @@ $(function() {
         name: '河源市',
         value: 120
       }
+      
     ];
     var max = 480,
       min = 9; // todo
@@ -167,9 +170,7 @@ $(function() {
           }
         }
       },
-
       series: [
-
         {
           name: '非异常',
           type: 'scatter',
