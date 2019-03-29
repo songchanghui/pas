@@ -69,12 +69,11 @@ echarts.extendsMap = function(id, opt){
 	var name = [opt.mapName];
 	var idx = 0;
 	var pos = {
-		leftPlus: 115,
-		leftCur: 150,
-		left: 200,
-		top: 50
+		leftPlus: 135,
+		leftCur: 152,
+		left: 300,
+		top: 150
 	};
-    
 	var line = [[0, 0], [8, 11], [0, 22]];
     // style
 	var style = {
