@@ -103,7 +103,6 @@ $(function() {
         templateTr.find("#region-amount").text("00000");
         templateTr.find("#region-amount-percent0").text("40%");
         templateTr.find("#region-amount-percent1").css("width","40%");
-        templateTr.id =
 
 
         templateTr.find("#region-num").text("00000");
