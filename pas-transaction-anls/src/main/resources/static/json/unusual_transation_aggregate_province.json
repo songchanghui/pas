@@ -49,47 +49,5 @@
       {"name":"珠海市","totalAmount":0,"totalNum":0,"totalShopNum":278,"totalAmountRate":"15%","totalNumRate":"25%","totalShopNumRate":"35%"},
       {"name":"韶关市","totalAmount":0,"totalNum":0,"totalShopNum":278,"totalAmountRate":"15%","totalNumRate":"25%","totalShopNumRate":"35%"}
     ]
-  },
-  "usual": {
-    "totalAmount":982583.079697,
-    "totalNum":8547428,
-    "totalShopNum":12029,
-    "type":[
-      {"name":"异常交易情况预警","value":7179269},
-      {"name":"异常交易时间预警","value":1368159}
-    ] ,
-    "tradeType":[
-      {"name":"小额取现","value":1368159},
-      {"name":"转账(非助农现金汇款、助农转账汇款)","value":1368159},
-      {"name":"助农现金汇款(现金汇款)","value":3362},
-      {"name":"助农取款","value":1368159},
-      {"name":"转账汇款","value":1368159},
-      {"name":"余额查询","value":1368159},
-      {"name":"电力缴费预存","value":1368159},
-      {"name":"助农转账汇款","value":1368159},
-      {"name":"转账","value":1368159},
-      {"name":"电信充值缴费(充值缴费)","value":1368159},
-      {"name":"现金汇款","value":1368159},
-      {"name":"其他","value":1368159},
-      {"name":"代理缴费","value":1368159}
-    ],
-    "region":[
-      {"name":"云浮市","totalAmount":0,"totalNum":0,"totalShopNum":0},
-      {"name":"揭阳市","totalAmount":0,"totalNum":0,"totalShopNum":0},
-      {"name":"潮州市","totalAmount":0,"totalNum":0,"totalShopNum":0},
-      {"name":"清远市","totalAmount":0,"totalNum":0,"totalShopNum":0},
-      {"name":"阳江市","totalAmount":0,"totalNum":0,"totalShopNum":0},
-      {"name":"河源市","totalAmount":0,"totalNum":0,"totalShopNum":0},
-      {"name":"汕尾市","totalAmount":0,"totalNum":0,"totalShopNum":0},
-      {"name":"梅州市","totalAmount":0,"totalNum":0,"totalShopNum":0},
-      {"name":"惠州市","totalAmount":0,"totalNum":0,"totalShopNum":0},
-      {"name":"肇庆市","totalAmount":0,"totalNum":0,"totalShopNum":0},
-      {"name":"茂名市","totalAmount":0,"totalNum":0,"totalShopNum":0},
-      {"name":"湛江市","totalAmount":0,"totalNum":0,"totalShopNum":0},
-      {"name":"江门市","totalAmount":0,"totalNum":0,"totalShopNum":0},
-      {"name":"汕头市","totalAmount":0,"totalNum":0,"totalShopNum":0},
-      {"name":"珠海市","totalAmount":0,"totalNum":0,"totalShopNum":0},
-      {"name":"韶关市","totalAmount":0,"totalNum":0,"totalShopNum":0}
-    ]
   }
 }
