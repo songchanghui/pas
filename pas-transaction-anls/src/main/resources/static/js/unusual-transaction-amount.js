@@ -1,3 +1,41 @@
+
+/** @param data
+ * [
+ * {"name":"云浮市","totalAmount":38122.52135,"totalNum":668109,"totalShopNum":0},
+ * {"name":"揭阳市","totalAmount":8325.66144,"totalNum":76357,"totalShopNum":0}
+ * ]*/
+var setCategoryAmount = function(data){
+    //异常交易区域数组
+    var unusualTransRegion = data.region;
+    var unusualTransRegionSortAmount = unusualTransRegion.sort(function(a,b){
+      if (a.totalAmount > b.totalAmount){
+        return -1;
+      }else{
+        return 1;
+      }
+    }).slice(0,5).sort(function(a,b) {
+          if (a.totalAmount > b.totalAmount) {
+            return 1;
+          } else {
+            return -1;
+          }
+        }
+    );
+    var unusualTransRegionSortAmountyAxisData = [];
+    var unusualTransRegionSortAmountSeriesData = [];
+    unusualTransRegionSortAmount.forEach(function (item,i) {
+      if(i<5){
+        unusualTransRegionSortAmountyAxisData.push(item.name);
+        unusualTransRegionSortAmountSeriesData.push(item.totalAmount);
+      }
+    });
+    //设置异常交易-市交易金额top5
+    var FdivContentChart02 = echarts.init(document.getElementById('f-div-content'));
+    unusual_transaction_amount_option.yAxis[0].data = unusualTransRegionSortAmountyAxisData;
+    unusual_transaction_amount_option.series[0].data = unusualTransRegionSortAmountSeriesData;
+    FdivContentChart02.setOption(unusual_transaction_amount_option);
+
+}
 unusual_transaction_amount_option = {
     // backgroundColor: '',
     grid: {
@@ -32,8 +70,7 @@ unusual_transaction_amount_option = {
         lineStyle: {
           color: '#b2b2b5',
         }
-      },
-      data: ['珠海', '湛江', '茂名', '东莞', '广州']
+      }
     },
       {
         type: 'category',
@@ -51,8 +88,7 @@ unusual_transaction_amount_option = {
         },
         splitLine: {
           show: false
-        },
-        data: ['珠海', '湛江', '茂名', '东莞', '广州']
+        }
       },
 
     ],
@@ -81,8 +117,7 @@ unusual_transaction_amount_option = {
           }
         },
         barGap: '0%',
-        barCategoryGap: '50%',
-        data: [120, 132, 101, 134, 90]
+        barCategoryGap: '50%'
       }
 
 

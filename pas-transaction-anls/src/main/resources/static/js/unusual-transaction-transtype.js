@@ -1,4 +1,12 @@
- var unusual_transacion_transtype_option = {
+var setPieUnusualTransacionTransType = function(data){
+    //异常交易类型占比
+    var unusualTransType = data.tradeType;
+    //设置异常交易类型占比
+    var PercentMainChart02 = echarts.init(document.getElementById('PercentMain02'));
+    unusual_transacion_transtype_option.series[0].data = unusualTransType;
+    PercentMainChart02.setOption(unusual_transacion_transtype_option);
+}
+var unusual_transacion_transtype_option = {
    tooltip: {
      trigger: 'item',
      formatter: "{b}: {c} ({d}%)"

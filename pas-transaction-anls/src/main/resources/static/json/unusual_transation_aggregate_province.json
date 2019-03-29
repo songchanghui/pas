@@ -1,8 +1,17 @@
 {
   "unusual":{
-    "totalAmount":982583.079697,
-    "totalNum":8547428,
-    "totalShopNum":12029,
+    "totalAmount":{
+      "value":982583.079697,
+      "rate":"30%"
+    },
+    "totalNum":{
+      "value":8547428,
+      "rate":"45%"
+    },
+    "totalShopNum":{
+      "value":12029,
+      "rate":"27%"
+    },
     "type":[
       {"name":"异常交易情况预警","value":7179269},
       {"name":"异常交易时间预警","value":1368159}

@@ -1,3 +1,12 @@
+
+//设置异常类型占比
+var setPieUnusualTransacionType = function(data){
+  var unusualType = data.type;
+  //设置异常类型占比
+    var PercentMainChart = echarts.init(document.getElementById('PercentMain'));
+    unusual_transacion_type_option.series[0].data = unusualType;
+    PercentMainChart.setOption(unusual_transacion_type_option);
+}
 var unusual_transacion_type_option ={
     tooltip: {
       trigger: 'item',
@@ -23,4 +32,6 @@ var unusual_transacion_type_option ={
         avoidLabelOverlap: false,
       }
     ]
-  };
+}
+
+

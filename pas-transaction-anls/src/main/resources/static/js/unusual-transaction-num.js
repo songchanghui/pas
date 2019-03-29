@@ -1,3 +1,37 @@
+/** @param data
+ * [
+ * {"name":"云浮市","totalAmount":38122.52135,"totalNum":668109,"totalShopNum":0},
+ * {"name":"揭阳市","totalAmount":8325.66144,"totalNum":76357,"totalShopNum":0}
+ * ]*/var setCategoryNum = function(data){
+  //异常交易笔数排名
+  var unusualTransRegionSortNum = data.region.sort(function(a,b){
+    if (a.totalNum > b.totalNum){
+      return -1;
+    }else{
+      return 1;
+    }
+  }).slice(0,5).sort(function(a,b) {
+        if (a.totalNum > b.totalNum) {
+          return 1;
+        } else {
+          return -1;
+        }
+      }
+  );
+  var unusualTransRegionSortNumyAxisData = [];
+  var unusualTransRegionSortNumSeriesData = [];
+  unusualTransRegionSortNum.forEach(function (item,i) {
+    if(i<5){
+      unusualTransRegionSortNumyAxisData.push(item.name);
+      unusualTransRegionSortNumSeriesData.push(item.totalNum);
+    }
+  });
+  //设置异常交易-市交易笔数top5
+  var TdivContentChart02 = echarts.init(document.getElementById('t-div-content'));
+  unusual_transaction_num_option.yAxis[0].data = unusualTransRegionSortNumyAxisData;
+  unusual_transaction_num_option.series[0].data = unusualTransRegionSortNumSeriesData;
+  TdivContentChart02.setOption(unusual_transaction_num_option);
+}
 var unusual_transaction_num_option = {
     // backgroundColor: '',
     grid: {
@@ -32,8 +66,7 @@ var unusual_transaction_num_option = {
         lineStyle: {
           color: '#b2b2b5',
         }
-      },
-      data: ['珠海', '湛江', '茂名', '东莞', '广州']
+      }
     },
       {
         type: 'category',
@@ -51,8 +84,7 @@ var unusual_transaction_num_option = {
         },
         splitLine: {
           show: false
-        },
-        data: ['珠海', '湛江', '茂名', '东莞', '广州']
+        }
       },
 
     ],
@@ -81,8 +113,7 @@ var unusual_transaction_num_option = {
           }
         },
         barGap: '0%',
-        barCategoryGap: '50%',
-        data: [120, 132, 101, 134, 90]
+        barCategoryGap: '50%'
       }
     ]
 }
