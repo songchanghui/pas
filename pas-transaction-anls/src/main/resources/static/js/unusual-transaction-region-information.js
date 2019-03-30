@@ -20,7 +20,7 @@ var setRegionInformation = function(data){
 
         var templateTr = $("#template").clone();
         templateTr.attr("id","region"+i);
-        templateTr.css("display","block");
+        templateTr.attr("name","region");
         templateTr.find("#region").text(regionName);
         templateTr.find("#region-amount").text(totalAmount);
         templateTr.find("#region-amount-rate0").text(totalAmountRate);
@@ -36,4 +36,8 @@ var setRegionInformation = function(data){
 
         templateTr.appendTo("#list");
     });
+    setTimeout(function () {
+        var allObj=$('[name=region]');
+        allObj.show();
+    },1000);
 }

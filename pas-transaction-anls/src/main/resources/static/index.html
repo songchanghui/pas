@@ -111,7 +111,7 @@
         <li class="li3">异常交易-笔数(笔)</li>
         <li class="li4">异常交易-服务点数(个)</li>
     </ul>
-    <ul class="region-content" id="list">
+    <marquee class="region-content" id="list" onMouseOver=this.stop() onMouseOut=this.start() scrollamount = 350 scrolldelay=5000 direction=up>
         <li class="clearfix" id="template" style="display: none">
             <div class="li1" id="region">广州</div>
             <div class="li2">
@@ -141,10 +141,9 @@
                 <p class="cslbb">
                     <i class="cslb-3" id="region-service-num-rate1" style="width:60%"></i>
                 </p>
-
             </div>
         </li>
-    </ul>
+    </marquee>
 
 
 </div>
