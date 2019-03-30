@@ -20,7 +20,7 @@ var setOverview = function(data){
     $('#num1-rate1').css("width",unusualTotalAmountRate);
     $('#num2').animateNumber({ number: unusualTotalNum });
     $('#num2-rate0').text(unusualTotalNumRate);
-    $('#num2-rate1').css("width",unusualTotalNumRate);;
+    $('#num2-rate1').css("width",unusualTotalNumRate);
     $('#num3').animateNumber({ number: unusualTotalShopNum });
     $('#num3-rate0').text(unusualTotalShopNumRate);
     $('#num3-rate1').css("width",unusualTotalShopNumRate);

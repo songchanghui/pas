@@ -1,13 +1,19 @@
 /**
  * Created by songchanghui on 2019/3/28.
  */
-var  dataURL="json/unusual_transation_aggregate_province.json";
+var dataURL="json/unusual_transation_aggregate_province.json";
+var serviceDataURL="json/service.json";
 /** @namespace dataJson.unusual */
 /** @namespace dataJson.unusual.tradeType */
 $(function() {
+    $.getJSON(serviceDataURL, function (data) {
+        console.log(data.service);
+        setServiceMap(data.service);
+    });
     $.getJSON(dataURL, function (dataJson) {
         setData(dataJson);
     });
+
     var setData = function(dataJson){
         //设置异常交易概况
         setOverview(dataJson.unusual);
