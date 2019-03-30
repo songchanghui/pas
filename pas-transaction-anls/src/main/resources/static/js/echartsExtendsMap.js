@@ -428,8 +428,6 @@ echarts.extendsMap = function(id, opt){
                     textStyle: {
                         color: '#fff',
                     },
-                    extraCssText: 'width:180px;height:90px;'
-                    ,
                     extraCssText:'width:220px;height:300px;',
                     formatter: function(param, ticket, callback) {
                         var html =
