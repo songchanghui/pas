@@ -167,6 +167,19 @@ body{
   padding-left:15px;
   padding-right: 10px;
 }
+.yichang-ul-tooltip{
+  margin-top: 20px;
+  margin-left:15px;
+  margin-right: 10px;
+}
+.yichang-ul-tooltip li{
+  width: 85%;
+  height: 100%;
+  background: #0d152f;
+  padding-left:15px;
+  padding-right:10px;
+  padding-bottom: 14px;
+}
 .yichang-ul li:not(:last-child){
   margin-right: 18px;
 }
@@ -176,10 +189,21 @@ body{
   margin-bottom: 14px;
   margin-top: 14px;
 }
+.s-title-tooltip{
+  color: #818593;
+  font-size: 14px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
 .l-title{
   color: #287be8;
   font-size:40px;
   /*margin-bottom: 8px;*/
+  font-family: Arial, Helvetica, sans-serif
+}
+.l-title-tooltip{
+  color: #287be8;
+  font-size:30px;
   font-family: Arial, Helvetica, sans-serif
 }
 .cslb-box h4{

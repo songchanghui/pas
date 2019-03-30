@@ -428,20 +428,22 @@ echarts.extendsMap = function(id, opt){
                     textStyle: {
                         color: '#fff',
                     },
-                    extraCssText:'width:220px;height:300px;',
+                    extraCssText:'width:220px;height:260px;',
                     formatter: function(param, ticket, callback) {
                         var html =
                                 "<h3 class='common-h'><i></i>"+param.data.name+"-异常交易概况</h3>" +
-                                "<ul class='yichang-ul'>"+
+                                "<ul class='yichang-ul-tooltip'> " +
+                                "<li>"+
                                 "   <p class='s-title'>异常交易-金额(万元)</p>"+
-                                "       <h4 class='l-title' id='num1'>"+param.data.totalAmount+"</h4>"+
+                                "       <h4 class='l-title-tooltip' id='num1'>"+param.data.totalAmount+"</h4>"+
                                 "   </p>"+
                                 "   <p class='s-title'>异常交易-笔数(笔)</p>"+
-                                "       <h4 class='l-title' id='num1'>"+param.data.totalNum+"</h4>"+
+                                "       <h4 class='l-title-tooltip' id='num1'>"+param.data.totalNum+"</h4>"+
                                 "   </p>"+
                                 "   <p class='s-title'>异常交易-服务点数</p>"+
-                                "       <h4 class='l-title' id='num1'>"+param.data.totalShopNum+"</h4>"+
-                                "   </p>"+
+                                "       <h4 class='l-title-tooltip' id='num1'>"+param.data.totalShopNum+"</h4>"+
+                                "   </p> " +
+                                "</li>"+
                                 "</ul>";
                         return html;
                     }
