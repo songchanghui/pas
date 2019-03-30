@@ -405,7 +405,7 @@ echarts.extendsMap = function(id, opt){
                     }
                 }
             },
-            data: opt.data
+            data: opt.data.service
         },
             {
                 type: 'effectScatter',
@@ -438,9 +438,7 @@ echarts.extendsMap = function(id, opt){
                     },
                     extraCssText: 'width:180px;height:90px;'
                 },
-                data: [
-                    {"name": "广州市", "value": [113.264360, 23.129080, 100, 2]}
-                ]
+                data: opt.data.region
             }]
     };
     chart.setOption(option);
