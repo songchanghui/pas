@@ -445,8 +445,6 @@ echarts.extendsMap = function(id, opt){
                                 "       <h4 class='l-title' id='num1'>"+param.data.totalShopNum+"</h4>"+
                                 "   </p>"+
                                 "</ul>";
-
-                        console.log(html);
                         return html;
                     }
                 },
