@@ -238,15 +238,7 @@ echarts.extendsMap = function(id, opt){
     
     var option = {
         tooltip : {
-            trigger: 'item',
-            backgroundColor:'rgba(0,0,0,0.6)',
-            borderWidth:'2',
-            borderColor:'#1c243c',
-            textStyle:{
-                color:'#fff',
-            },
-            extraCssText:'width:180px;height:90px;'
-
+            trigger: 'item'
         },
     	graphic: [{
     		type: 'group',
@@ -340,7 +332,7 @@ echarts.extendsMap = function(id, opt){
                 },
                 emphasis: {
                     textStyle: {
-                        color: '#fff'
+                        color: '#000'
                     }
                 }
             },
@@ -349,15 +341,12 @@ echarts.extendsMap = function(id, opt){
                     borderColor: 'rgba(147, 235, 248, 1)',
                     borderWidth: 1,
                     areaColor: '#051228',
-                    shadowColor: 'rgba(128, 217, 248, 1)',
-                    // shadowColor: 'rgba(255, 255, 255, 1)',
-                    shadowOffsetX: -1,
-                    shadowOffsetY: 2,
-                    shadowBlur: 10
                 },
                 emphasis: {
-                    areaColor: '#051228',
-                    borderWidth: 0
+                    borderColor: 'rgba(147, 235, 248, 1)',
+                    //areaColor: '#051228',
+                    areaColor: '#f0bf00',
+                    borderWidth: 1
                 }
             },
             regions: opt.activeArea.map(function(item){
@@ -397,6 +386,16 @@ echarts.extendsMap = function(id, opt){
             symbolSize: function (val) {
                 return 4;
             },
+            tooltip : {
+                show:false,
+                backgroundColor:'rgba(0,0,0,0.6)',
+                borderWidth:'2',
+                borderColor:'#1c243c',
+                textStyle:{
+                    color:'#fff',
+                },
+                extraCssText:'width:180px;height:90px;'
+            },
             hoverAnimation: true,
             itemStyle: {
                 normal: {
@@ -407,7 +406,42 @@ echarts.extendsMap = function(id, opt){
                 }
             },
             data: opt.data
-        }]
+        },
+            {
+                type: 'effectScatter',
+                coordinateSystem: 'geo',
+                showEffectOn: 'render',
+                rippleEffect: {
+                    period: 6,
+                    scale: 6,
+                    brushType: 'fill'
+                },
+                hoverAnimation: true,
+                itemStyle: {
+                    normal: {
+                        areaColor: '#389BB7',
+                        color: function (params) {
+                            console.log(params);
+                            return levelColorMap[params.value[3]];
+                        },
+                        shadowBlur: 10,
+                        shadowColor: '#333'
+                    }
+                },
+                tooltip: {
+                    show: true,
+                    backgroundColor: 'rgba(0,0,0,0.6)',
+                    borderWidth: '2',
+                    borderColor: '#1c243c',
+                    textStyle: {
+                        color: '#fff',
+                    },
+                    extraCssText: 'width:180px;height:90px;'
+                },
+                data: [
+                    {"name": "广州市", "value": [113.264360, 23.129080, 100, 2]}
+                ]
+            }]
     };
     chart.setOption(option);
     // 添加事件

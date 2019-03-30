@@ -6,7 +6,7 @@
  * ]*/
 var setCategoryAmount = function(data){
     //异常交易区域数组
-    var unusualTransRegion = data.region;
+    var unusualTransRegion = data;
     var unusualTransRegionSortAmount = unusualTransRegion.sort(function(a,b){
       if (a.totalAmount > b.totalAmount){
         return -1;

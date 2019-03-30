@@ -4,7 +4,7 @@
  * {"name":"揭阳市","totalAmount":8325.66144,"totalNum":76357,"totalShopNum":0}
  * ]*/var setCategoryNum = function(data){
   //异常交易笔数排名
-  var unusualTransRegionSortNum = data.region.sort(function(a,b){
+  var unusualTransRegionSortNum = data.sort(function(a,b){
     if (a.totalNum > b.totalNum){
       return -1;
     }else{

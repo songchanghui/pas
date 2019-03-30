@@ -1,7 +1,7 @@
 
 //设置异常类型占比
 var setPieUnusualTransacionType = function(data){
-  var unusualType = data.type;
+  var unusualType = data;
   //设置异常类型占比
     var PercentMainChart = echarts.init(document.getElementById('PercentMain'));
     unusual_transacion_type_option.series[0].data = unusualType;
