@@ -388,13 +388,6 @@ echarts.extendsMap = function(id, opt){
             },
             tooltip : {
                 show:false,
-                backgroundColor:'rgba(0,0,0,0.6)',
-                borderWidth:'2',
-                borderColor:'#1c243c',
-                textStyle:{
-                    color:'#fff',
-                },
-                extraCssText:'width:180px;height:90px;'
             },
             hoverAnimation: true,
             itemStyle: {
@@ -421,7 +414,6 @@ echarts.extendsMap = function(id, opt){
                     normal: {
                         areaColor: '#389BB7',
                         color: function (params) {
-                            console.log(params);
                             return levelColorMap[params.value[3]];
                         },
                         shadowBlur: 10,
@@ -437,6 +429,26 @@ echarts.extendsMap = function(id, opt){
                         color: '#fff',
                     },
                     extraCssText: 'width:180px;height:90px;'
+                    ,
+                    extraCssText:'width:220px;height:300px;',
+                    formatter: function(param, ticket, callback) {
+                        var html =
+                                "<h3 class='common-h'><i></i>"+param.data.name+"-异常交易概况</h3>" +
+                                "<ul class='yichang-ul'>"+
+                                "   <p class='s-title'>异常交易-金额(万元)</p>"+
+                                "       <h4 class='l-title' id='num1'>"+param.data.totalAmount+"</h4>"+
+                                "   </p>"+
+                                "   <p class='s-title'>异常交易-笔数(笔)</p>"+
+                                "       <h4 class='l-title' id='num1'>"+param.data.totalNum+"</h4>"+
+                                "   </p>"+
+                                "   <p class='s-title'>异常交易-服务点数</p>"+
+                                "       <h4 class='l-title' id='num1'>"+param.data.totalShopNum+"</h4>"+
+                                "   </p>"+
+                                "</ul>";
+
+                        console.log(html);
+                        return html;
+                    }
                 },
                 data: opt.data.region
             }]

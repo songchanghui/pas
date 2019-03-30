@@ -136,7 +136,7 @@ body{
 
 /* 
   全省异常交易状况 */
-  .yizhang-box{
+  .yichang-box{
     position: absolute;
     top: 128px;
   }
@@ -156,10 +156,10 @@ body{
     margin-top: 4px;
 
   }
-.yizhang-ul{
+.yichang-ul{
   margin-top: 20px;
 }
-.yizhang-ul li{
+.yichang-ul li{
   float: left;
   width: 204px;
   height: 144px;
@@ -167,7 +167,7 @@ body{
   padding-left:15px;
   padding-right: 10px;
 }
-.yizhang-ul li:not(:last-child){
+.yichang-ul li:not(:last-child){
   margin-right: 18px;
 }
 .s-title{
