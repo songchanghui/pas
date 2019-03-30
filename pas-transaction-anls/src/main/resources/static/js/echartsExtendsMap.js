@@ -394,18 +394,16 @@ echarts.extendsMap = function(id, opt){
         series: [{
             type: 'scatter',
             coordinateSystem: 'geo',
-            // symbol: 'diamond',
-            showEffectOn: 'render',
-
+            symbolSize: function (val) {
+                return 4;
+            },
             hoverAnimation: true,
             itemStyle: {
                 normal: {
                     areaColor: '#389BB7',
                     color: function(params){
                         return levelColorMap[params.value[3]];
-                    },
-                    shadowBlur: 10,
-                    shadowColor: '#333'
+                    }
                 }
             },
             data: opt.data
