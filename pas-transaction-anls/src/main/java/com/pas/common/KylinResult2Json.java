@@ -14,7 +14,6 @@ import java.util.List;
  */
 public class KylinResult2Json {
     public static JSONArray parse(JSONObject jsonObject){
-        //json返回结果
         try {
             JSONArray columnMetas = jsonObject.getJSONArray("columnMetas");
             JSONArray results = jsonObject.getJSONArray("results");
@@ -26,7 +25,6 @@ public class KylinResult2Json {
                 columnMetas.forEach(column ->{
                     columns.add(((JSONObject)column).getString("label"));
                 });
-                final JSONArray finalJsonArrayRtn = jsonArrayRtn;
                 results.forEach(result ->{
                     JSONObject jsonObjectRtn = new JSONObject();
                     for(int i=0;i<columns.size();i++){
