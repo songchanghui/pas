@@ -1,0 +1,19 @@
+{
+  "properties": [
+    {
+      "name": "kylin.post.user.name.default",
+      "type": "java.lang.String",
+      "description": "Description for kylin.post.user.name.default."
+    },
+    {
+      "name": "kylin.post.api",
+      "type": "java.lang.String",
+      "description": "Description for kylin.post.api."
+    },
+    {
+      "name": "kylin.post.user.password",
+      "type": "java.lang.String",
+      "description": "Description for kylin.post.user.password."
+    }
+  ]
+}

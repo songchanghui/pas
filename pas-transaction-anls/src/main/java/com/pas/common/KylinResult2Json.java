@@ -13,6 +13,7 @@ import java.util.List;
  * @date 2019/3/31
  */
 public class KylinResult2Json {
+
     public static JSONArray parse(JSONObject jsonObject){
         try {
             JSONArray columnMetas = jsonObject.getJSONArray("columnMetas");
