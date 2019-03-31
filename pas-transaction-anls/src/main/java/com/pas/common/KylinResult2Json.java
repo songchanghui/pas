@@ -22,9 +22,7 @@ public class KylinResult2Json {
             }else{
                 final JSONArray jsonArrayRtn = new JSONArray();
                 List<String> columns = new ArrayList<>();
-                columnMetas.forEach(column ->{
-                    columns.add(((JSONObject)column).getString("label"));
-                });
+                columnMetas.forEach(column -> columns.add(((JSONObject)column).getString("label")));
                 results.forEach(result ->{
                     JSONObject jsonObjectRtn = new JSONObject();
                     for(int i=0;i<columns.size();i++){
