@@ -28,6 +28,7 @@ public class KylinResult2JsonTest {
         lines.forEach(line -> sbr.append(line));
         JSONObject json = JSONObject.parseObject(sbr.toString());
         JSONArray jsonArray = KylinResult2Json.parse(json);
-        System.out.println(jsonArray);
+        assertEquals(10,jsonArray.size());
+        assertEquals("C1010344000148",((JSONObject)jsonArray.get(0)).getString("COL_ORG_NUM"));
     }
 }
