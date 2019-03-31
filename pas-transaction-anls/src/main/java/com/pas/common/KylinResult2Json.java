@@ -30,7 +30,7 @@ public class KylinResult2Json {
                 results.forEach(result ->{
                     JSONObject jsonObjectRtn = new JSONObject();
                     for(int i=0;i<columns.size();i++){
-                        jsonObjectRtn.put(columns.get(i),((JSONArray) result).get(0));
+                        jsonObjectRtn.put(columns.get(i),((JSONArray) result).get(i));
                     }
                     jsonArrayRtn.add(jsonObjectRtn);
                 });
