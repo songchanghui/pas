@@ -3,9 +3,10 @@ $(function () {
   option = {
     // backgroundColor: '',
     grid: {
-      left: '4%',
-      right: '4%',
-      bottom: '10%',
+      height:120,
+      left: '1%',
+      right: '1%',
+      bottom: '1%',
       containLabel: true,
       color:'#121933'
     },

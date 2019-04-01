@@ -12,6 +12,15 @@ $(function () {
       {
         left:'left',
         center: ['60%', '50%'],
+        label:{
+          normal:{
+            formatter(v) {
+              var text = v.name
+              return text.length < 4
+                ? text : `${text.slice(0,4)}\n${text.slice(4)}`
+            }
+          }
+        },
         itemStyle:{
           normal:{
             color:function(params) {

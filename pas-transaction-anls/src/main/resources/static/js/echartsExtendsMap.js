@@ -69,9 +69,9 @@ echarts.extendsMap = function(id, opt){
 	var name = [opt.mapName];
 	var idx = 0;
     var pos = {
-        leftPlus: 135,
+        leftPlus: 185,
         leftCur: 152,
-        left: 300,
+        left: 600,
         top: 150
     };
     
@@ -242,11 +242,11 @@ echarts.extendsMap = function(id, opt){
         },
     	graphic: [{
     		type: 'group',
-    		left: 198,
+    		left: 268,
 	        top: pos.top - 4,
     		children: [{
     			type: 'line',
-    			left: 0,
+    			left: 70,
         		top: -20,
         		shape: {
                     x1: 0,
@@ -259,7 +259,7 @@ echarts.extendsMap = function(id, opt){
         		}
 			}, {
     			type: 'line',
-    			left: 0,
+    			left: 70,
         		top: 20,
 		        shape: {
                     x1: 0,
@@ -274,7 +274,7 @@ echarts.extendsMap = function(id, opt){
     	}, {
         	id: name[idx],
         	type: 'group',
-        	left: 200,
+        	left: 270,
         	top: pos.top,
         	children: [{
         		type: 'polyline',

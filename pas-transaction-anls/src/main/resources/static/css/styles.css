@@ -1,4 +1,7 @@
 /********** 默认设置 **********/
+html{
+  font-size:100px;
+}
 html,
 body,
 div,
@@ -106,66 +109,66 @@ body{
     font-family: "lanting";
     position: relative;
     background: #050e28;
-    padding-left: 40px;
+    padding-left:0.4rem;
   }
   .title{
-    font-size: 24px;
+    font-size: .24rem;
     color: #fff;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 0.1rem;
     font-weight:normal; 
   }
   .time-box{
     position: absolute;
-    top: 56px;
+    top: 0.56rem;
     z-index: 99;
   }
   .time-box-title{
     float: left;
-    height: 40px;
-    line-height: 40px;
-    margin-right: 18px;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    margin-right: 0.18rem;
   }
   .time-list{
     float: left;
-    width: 154px;
-    height: 40px;
+    width: 1.54rem;
+    height: 0.04rem;
     border: 1px solid #373e53;
-    margin-right: 9px;
+    margin-right:0.09rem;
   }
 
 /* 
   全省异常交易状况 */
   .yichang-box{
     position: absolute;
-    top: 128px;
+    top: 0.6rem;
   }
   .common-h{
     color: #fff;
-    font-size: 16px;
+    font-size: 0.16rem;
     font-weight: normal;
   }
   .common-h i{
-    width: 4px;
-    height: 15px;
-    border-radius: 5px;
+    width: 0.04rem;
+    height: 0.15rem;
+    border-radius:0.05rem;
     background: #f4c75d;
     display: block;
-    margin-right: 10px;
+    margin-right: 0.1rem;
     float: left;
-    margin-top: 4px;
+    margin-top: 0.04rem;
 
   }
 .yichang-ul{
-  margin-top: 20px;
+  margin-top: 0.2rem;
 }
 .yichang-ul li{
   float: left;
-  width: 204px;
-  height: 144px;
+  width: 2.04rem;
+  height: 1.44rem;
   background: #0d152f;
-  padding-left:15px;
-  padding-right: 10px;
+  padding-left:0.15rem;
+  padding-right:0.1rem;
 }
 .yichang-ul-tooltip{
   margin-top: 20px;
@@ -181,13 +184,13 @@ body{
   padding-bottom: 14px;
 }
 .yichang-ul li:not(:last-child){
-  margin-right: 18px;
+  margin-right:0.18rem;
 }
 .s-title{
   color: #818593;
-  font-size: 14px;
-  margin-bottom: 14px;
-  margin-top: 14px;
+  font-size: 0.14rem;
+  margin-bottom: 0.14rem;
+  margin-top:0.14rem;
 }
 .s-title-tooltip{
   color: #818593;
@@ -197,54 +200,55 @@ body{
 }
 .l-title{
   color: #287be8;
-  font-size:40px;
+  font-size:0.4rem;
   /*margin-bottom: 8px;*/
   font-family: Arial, Helvetica, sans-serif
 }
 .l-title-tooltip{
   color: #287be8;
-  font-size:30px;
+  font-size:0.3rem;
   font-family: Arial, Helvetica, sans-serif
 }
 .cslb-box h4{
   font-weight: normal;
-  font-size: 14px;
-  margin-bottom: 6px;
+  font-size: 0.14rem;
+  margin-bottom: 0.06rem;
   color: #ddc400;
 }
 .s-div{
   position: absolute;
-  top: 340px;
+  top: 2.8rem;
 }
 .percent-box{
   float: left;
 }
 .percent-s{
-  width:324px;
+  width:3.24rem;
 }
 .percent-content{
-  width: 420px;
-  height: 222px;
+  width: 4.20rem;
+  height: 2.22rem;
 }
 .f-div{
   position: absolute;
-  top:580px;
+  top:5.4rem;
 }
 .t-div{
   position: absolute;
-  top:808px;
+  top:8.38rem;
 }
 .region-list{
   position: absolute;
-  right: 40px;
-  top:650px;
+  right: 0.4rem;
+  top:9rem;
   /*height: 390px;*/
   /*overflow-y: scroll;*/
 }
 .div-map{
-  right: 97px;
+  right: -0.6rem;
   position: absolute;
-  top: -33px;
+  top: -0.1rem;
+  z-index: 999;
 }
 #echarts{
   width: 1330px;
@@ -304,10 +308,10 @@ input{
   padding-left: 6px;
 }
 .cslb{
-  width: 160px;
+  width: 1.60rem;
   background: #262d44;
-  height: 10px;
-  border-radius:6px;
+  height: 0.1rem;
+  border-radius:0.06rem;
   line-height: 0px;
   position: relative;
 }
@@ -335,7 +339,7 @@ input{
   background-image: -webkit-linear-gradient(top left, #e04b4d, #eb9e7a);
 }
 
-@keyframes warn {
+/*@keyframes warn {
   0% {
     transform: scale(0);
     opacity: 0.0;
@@ -378,14 +382,18 @@ input{
     -webkit-transform: scale(1);
     opacity: 0.0;
   }
-}
+}*/
 #f-div-content{
-  width: 470px;
-  height: 210px;
+  width: 4.70rem;
+  height:3.10rem;
+  top: -0.2rem;
+  position: absolute;
 }
 .t-div-content{
-  width: 470px;
-  height: 210px;
+  width: 4.70rem;
+  height: 3.10rem;
+  position: absolute;
+  top: -0.08rem;
 }
 .region-name{
 
@@ -393,24 +401,24 @@ input{
 .region-name li{
   float: left;
   background: #0d152f;
-  height: 52px;
-  line-height: 52px;
+  height:0.52rem;
+  line-height:0.52rem;
 
 }
 .li1{
-  width: 92px;
+  width: 0.92rem;
   text-align: center;
 }
 .li2{
-  width: 160px;
-  padding-right: 36px;
+  width: 1.7rem;
+  padding-right:0.36rem;
 }
 .li3{
-  width: 160px;
-  padding-right: 36px;
+  width: 1.60rem;
+  padding-right: 0.36rem;
 }
 .li4{
-  width: 200px;
+  width: 2rem;
 }
 .region-content{
   overflow-y: scroll;
