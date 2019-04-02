@@ -3,6 +3,7 @@ package com.pas.service.v1.impl;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.pas.common.Dic;
+import com.pas.common.Format;
 import com.pas.exception.PasException;
 import com.pas.service.v1.KylinService;
 import com.pas.service.v1.UnusualTransactionService;
@@ -10,6 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -66,37 +70,26 @@ public class UnusualTransactionServiceImpl implements UnusualTransactionService 
         String overviewTotalSqlCrr = null;
         String unusualTypeSqlCrr = null;
         String unusualTradeTypeSqlCrr = null;
-        String unusualRegionSqlCrr = null;
-        String regionSqlCrr = null;
-
         if(region.startsWith(Dic.REGION_GUANGDONG)){
             unusualOverviewTotalSqlCrr = unusualOverviewTotalSql;
             unusualTypeSqlCrr = unusualTypeSql;
             unusualTradeTypeSqlCrr = unusualTradeTypeSql;
-            unusualRegionSqlCrr = unusualRegionSql;
             overviewTotalSqlCrr = overviewTotalSql;
-            regionSqlCrr = regionSql;
         }else{
             unusualOverviewTotalSqlCrr = String.format(unusualOverviewCityTotalSql,region);
             unusualTypeSqlCrr = String.format(unusualTypeSql,region);
             unusualTradeTypeSqlCrr = String.format(unusualTradeTypeSql,region);
-            unusualRegionSqlCrr = String.format(unusualRegionSql,region);
             overviewTotalSqlCrr = String.format(overviewCityTotalSql,region);
-            regionSqlCrr = String.format(regionSql,region);
         }
         JSONArray resultUnusualOverview =  kylinService.post2Kylin(unusualOverviewTotalSqlCrr);
-        rtn.put("overview",parseOvervew(resultUnusualOverview));
+        JSONArray resultOverview =  kylinService.post2Kylin(overviewTotalSqlCrr);
         JSONArray resultUnusualTypeSqlCrr =  kylinService.post2Kylin(unusualTypeSqlCrr);
-        rtn.put("type",parseType(resultUnusualTypeSqlCrr));
         JSONArray resultUnusualTradeTypeSqlCrr =  kylinService.post2Kylin(unusualTradeTypeSqlCrr);
+        rtn.put("overview",parseOvervew(resultUnusualOverview,resultOverview));
+        rtn.put("type",parseType(resultUnusualTypeSqlCrr));
         rtn.put("tradeType",parseTradeType(resultUnusualTradeTypeSqlCrr));
-
-        JSONArray resultUnusualRegionSqlCrr =  kylinService.post2Kylin(unusualRegionSqlCrr);
-        rtn.put("region",parseRegion(resultUnusualRegionSqlCrr));
-
         return rtn;
     }
-
     private JSONArray parseRegion(JSONArray resultUnusualRegionSqlCrr) {
         JSONArray rtn = new JSONArray();
         resultUnusualRegionSqlCrr.forEach(json ->{
@@ -119,19 +112,29 @@ public class UnusualTransactionServiceImpl implements UnusualTransactionService 
         return  rtn;
     }
 
-    public JSONObject parseOvervew(JSONArray resultUnusualOverview){
+    public JSONObject parseOvervew(JSONArray resultUnusualOverview, JSONArray resultOverview){
         JSONObject overview = null;
-        if (resultUnusualOverview.size()>1){
+        if (resultUnusualOverview.size()>1||resultOverview.size()>1){
             throw new PasException("KylinResult 数据不正确");
         }else if(resultUnusualOverview.size()==1){
+            Map<String,Double> map = new HashMap<>(3);
+            resultOverview.forEach(result->{
+                JSONObject json = resultOverview.getJSONObject(0);
+                map.put("TOTALAMOUNT",json.getDouble("TOTALAMOUNT"));
+                map.put("TOTALNUM",json.getDouble("TOTALNUM"));
+                map.put("TOTALSHOPNUM",json.getDouble("TOTALSHOPNUM"));
+            });
             overview = new JSONObject();
             JSONObject result = resultUnusualOverview.getJSONObject(0);
             JSONObject totalAmount = new JSONObject();
             JSONObject totalNum = new JSONObject();
             JSONObject totalShopNum = new JSONObject();
             totalAmount.put("value",result.getDouble("TOTALAMOUNT"));
+            totalAmount.put("rate", Format.d2f(result.getDouble("TOTALAMOUNT")/map.get("TOTALAMOUNT")));
             totalNum.put("value",result.getDouble("TOTALNUM"));
+            totalNum.put("rate", Format.d2f(result.getDouble("TOTALNUM")/map.get("TOTALNUM")));
             totalShopNum.put("value",result.getDouble("TOTALSHOPNUM"));
+            totalShopNum.put("rate", Format.d2f(result.getDouble("TOTALSHOPNUM")/map.get("TOTALSHOPNUM")));
             overview.put("totalAmount",totalAmount);
             overview.put("totalNum",totalNum);
             overview.put("totalShopNum",totalShopNum);
@@ -148,6 +151,18 @@ public class UnusualTransactionServiceImpl implements UnusualTransactionService 
      */
     @Override
     public JSONObject getRegionData(String region) {
-        return null;
+        JSONObject rtn = new JSONObject();
+        String unusualRegionSqlCrr = null;
+        String regionSqlCrr = null;
+        if(region.startsWith(Dic.REGION_GUANGDONG)){
+            unusualRegionSqlCrr = unusualRegionSql;
+            regionSqlCrr = regionSql;
+        }else{
+            unusualRegionSqlCrr = String.format(unusualRegionSql,region);
+            regionSqlCrr = String.format(regionSql,region);
+        }
+        JSONArray resultUnusualRegionSqlCrr =  kylinService.post2Kylin(unusualRegionSqlCrr);
+        rtn.put("region",parseRegion(resultUnusualRegionSqlCrr));
+        return rtn;
     }
 }
