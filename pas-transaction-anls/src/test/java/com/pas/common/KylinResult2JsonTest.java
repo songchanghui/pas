@@ -31,4 +31,9 @@ public class KylinResult2JsonTest {
         assertEquals(10,jsonArray.size());
         assertEquals("C1010344000148",((JSONObject)jsonArray.get(0)).getString("COL_ORG_NUM"));
     }
+    @Test
+    public void test(){
+        String str ="中国R";
+        System.out.println(str.toLowerCase());
+    }
 }

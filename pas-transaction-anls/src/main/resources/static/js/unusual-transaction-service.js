@@ -8,7 +8,6 @@ var setServiceMap = function(data){
         goDown: true,
         data:data
     });
-
     timeTicket && clearInterval(timeTicket);
     var timeTicket = setInterval(function () {
         chart_map.dispatchAction({

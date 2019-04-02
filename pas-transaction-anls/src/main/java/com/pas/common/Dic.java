@@ -7,6 +7,6 @@ package com.pas.common;
  * @date 2019/1/24
  */
 public class Dic {
-
+    public static final String  REGION_GUANGDONG = "广东";
 
 }

@@ -764,8 +764,8 @@
     {"name":"普宁助农取款服务点大坪农场大坪尾村陈才芳","value":[115.8234212,23.19704145,100,1]}
   ],
   "region":[
-    {"name":"云浮市","value":[112.044530,22.915250,100,2],"totalAmount":38122.52135,"totalNum":668109,"totalShopNum":278,"totalAmountRate":"15%","totalNumRate":"25%","totalShopNumRate":"35%"},
-    {"name":"揭阳市","value":[116.372710,23.549720,100,2],"totalAmount":8325.66144,"totalNum":76357,"totalShopNum":278,"totalAmountRate":"18%","totalNumRate":"18%","totalShopNumRate":"35%"},
+    {"name":"云浮市","value":[112.044530,22.915250,100,2],"totalAmount":40535.871471,"totalNum":1102262,"totalShopNum":936,"totalAmountRate":"15%","totalNumRate":"25%","totalShopNumRate":"35%"},
+    {"name":"揭阳市","value":[116.372710,23.549720,100,2],"totalAmount":97842824.96,"totalNum":135398,"totalShopNum":211,"totalAmountRate":"18%","totalNumRate":"18%","totalShopNumRate":"35%"},
     {"name":"潮州市","value":[116.622960,23.656700,100,2],"totalAmount":13205.39588,"totalNum":24847,"totalShopNum":278,"totalAmountRate":"13%","totalNumRate":"35%","totalShopNumRate":"35%"},
     {"name":"清远市","value":[113.056150,23.682010,100,2],"totalAmount":41699.43758,"totalNum":519984,"totalShopNum":278,"totalAmountRate":"10%","totalNumRate":"35%","totalShopNumRate":"35%"},
     {"name":"阳江市","value":[111.982560,21.858290,100,2],"totalAmount":41699.43758,"totalNum":519984,"totalShopNum":278,"totalAmountRate":"16%","totalNumRate":"35%","totalShopNumRate":"35%"},

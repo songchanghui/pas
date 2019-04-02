@@ -18,7 +18,7 @@ public class KylinResult2Json {
         try {
             JSONArray columnMetas = jsonObject.getJSONArray("columnMetas");
             JSONArray results = jsonObject.getJSONArray("results");
-            if (columnMetas == null||columnMetas.size() ==0 || results == null||results.size() ==0){
+            if (columnMetas == null||results == null){
                 throw new PasException("KylinResult 数据不正确");
             }else{
                 final JSONArray jsonArrayRtn = new JSONArray();
