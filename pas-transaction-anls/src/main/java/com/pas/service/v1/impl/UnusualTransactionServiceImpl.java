@@ -162,6 +162,7 @@ public class UnusualTransactionServiceImpl implements UnusualTransactionService 
             regionSqlCrr = String.format(regionSql,region);
         }
         JSONArray resultUnusualRegionSqlCrr =  kylinService.post2Kylin(unusualRegionSqlCrr);
+        JSONArray resultRegionSqlCrr =  kylinService.post2Kylin(regionSqlCrr);
         rtn.put("region",parseRegion(resultUnusualRegionSqlCrr));
         return rtn;
     }

@@ -1,18 +1,13 @@
 package com.pas.transaction.web.v1;
 
-import com.alibaba.fastjson.JSONArray;
-import com.pas.common.Dic;
 import com.pas.common.JsonResult;
-import com.pas.service.v1.KylinService;
 import com.pas.service.v1.UnusualTransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  *
@@ -34,7 +29,7 @@ public class UnusualTransaction {
     public JsonResult getInformation(@PathVariable("region") String region) {
         JsonResult jsonResult = new JsonResult();
         try {
-
+            jsonResult.setData(unusualTransactionService.getRegionData(region));
             jsonResult.success("请求成功！");
         } catch (Exception e) {
             jsonResult.fail("kylin请求异常");
