@@ -245,7 +245,7 @@ body{
   /*overflow-y: scroll;*/
 }
 .div-map{
-  right: -0.6rem;
+  right: 0rem;
   position: absolute;
   top: -0.1rem;
   z-index: 999;

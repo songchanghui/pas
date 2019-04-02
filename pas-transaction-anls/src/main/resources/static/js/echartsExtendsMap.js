@@ -71,7 +71,7 @@ echarts.extendsMap = function(id, opt){
     var pos = {
         leftPlus: 185,
         leftCur: 152,
-        left: 600,
+        left: 200,
         top: 150
     };
     
@@ -242,9 +242,10 @@ echarts.extendsMap = function(id, opt){
         },
     	graphic: [{
     		type: 'group',
-    		left: 268,
+    		left: 270,
 	        top: pos.top - 4,
-    		children: [{
+    		children: [
+            {
     			type: 'line',
     			left: 70,
         		top: -20,
@@ -257,7 +258,8 @@ echarts.extendsMap = function(id, opt){
         		style: {
         			stroke: style.lineColor,
         		}
-			}, {
+			},
+            {
     			type: 'line',
     			left: 70,
         		top: 20,
@@ -363,19 +365,19 @@ echarts.extendsMap = function(id, opt){
                         color: '#fff',
                     },
                     extraCssText:'width:220px;height:260px;',
-                    formatter: function(param, ticket, callback) {
+                    formatter: function(paradm) {
                         var html =
-                            "<h3 class='common-h'><i></i>"+param.data.name+"-异常交易概况</h3>" +
+                            "<h3 class='common-h'><i></i>"+paradm.data.name+"-异常交易概况</h3>" +
                             "<ul class='yichang-ul-tooltip'> " +
                             "<li>"+
                             "   <p class='s-title'>异常交易-金额(万元)</p>"+
-                            "       <h4 class='l-title-tooltip' id='num1'>"+param.data.totalAmount+"</h4>"+
+                            "       <h4 class='l-title-tooltip' id='num1'>"+paradm.data.totalAmount+"</h4>"+
                             "   </p>"+
                             "   <p class='s-title'>异常交易-笔数(笔)</p>"+
-                            "       <h4 class='l-title-tooltip' id='num1'>"+param.data.totalNum+"</h4>"+
+                            "       <h4 class='l-title-tooltip' id='num1'>"+paradm.data.totalNum+"</h4>"+
                             "   </p>"+
                             "   <p class='s-title'>异常交易-服务点数</p>"+
-                            "       <h4 class='l-title-tooltip' id='num1'>"+param.data.totalShopNum+"</h4>"+
+                            "       <h4 class='l-title-tooltip' id='num1'>"+paradm.data.totalShopNum+"</h4>"+
                             "   </p> " +
                             "</li>"+
                             "</ul>";
