@@ -41,6 +41,16 @@ public class UnusualTransactionServiceImpl implements UnusualTransactionService 
     @Value("${unusual.region.area.sql}")
     private String  unusualRegionAreaSql;
 
+    @Value("${overview.total.sql}")
+    private String  overviewTotalSql;
+    @Value("${overview.total.city.sql}")
+    private String  overviewCityTotalSql;
+
+    @Value("${region.sql}")
+    private String  regionSql;
+    @Value("${region.area.sql}")
+    private String  regionAreaSql;
+
 
     /**
      * 获取统计数据
@@ -53,21 +63,26 @@ public class UnusualTransactionServiceImpl implements UnusualTransactionService 
     public JSONObject getAggregateData(String region) throws Exception{
         JSONObject rtn = new JSONObject();
         String unusualOverviewTotalSqlCrr = null;
+        String overviewTotalSqlCrr = null;
         String unusualTypeSqlCrr = null;
         String unusualTradeTypeSqlCrr = null;
         String unusualRegionSqlCrr = null;
+        String regionSqlCrr = null;
 
         if(region.startsWith(Dic.REGION_GUANGDONG)){
             unusualOverviewTotalSqlCrr = unusualOverviewTotalSql;
             unusualTypeSqlCrr = unusualTypeSql;
             unusualTradeTypeSqlCrr = unusualTradeTypeSql;
             unusualRegionSqlCrr = unusualRegionSql;
+            overviewTotalSqlCrr = overviewTotalSql;
+            regionSqlCrr = regionSql;
         }else{
             unusualOverviewTotalSqlCrr = String.format(unusualOverviewCityTotalSql,region);
             unusualTypeSqlCrr = String.format(unusualTypeSql,region);
             unusualTradeTypeSqlCrr = String.format(unusualTradeTypeSql,region);
             unusualRegionSqlCrr = String.format(unusualRegionSql,region);
-
+            overviewTotalSqlCrr = String.format(overviewCityTotalSql,region);
+            regionSqlCrr = String.format(regionSql,region);
         }
         JSONArray resultUnusualOverview =  kylinService.post2Kylin(unusualOverviewTotalSqlCrr);
         rtn.put("overview",parseOvervew(resultUnusualOverview));
