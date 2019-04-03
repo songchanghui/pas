@@ -29,6 +29,9 @@ public class UnusualTransactionServiceImpl implements UnusualTransactionService 
     @Qualifier(value = "kylinservice")
     private KylinService kylinService;
 
+    @Value("${kylin.post.project.rptransaction}")
+    private String  project;
+
     @Autowired
     @Qualifier(value = "pycxareacoordmap")
     private PyCxAreaCoordMap pyCxAreaCoordMap;
@@ -89,10 +92,10 @@ public class UnusualTransactionServiceImpl implements UnusualTransactionService 
             unusualTradeTypeSqlCrr = String.format(unusualTradeTypeSql,region);
             overviewTotalSqlCrr = String.format(overviewCityTotalSql,region);
         }
-        JSONArray resultUnusualOverview =  kylinService.post2Kylin(unusualOverviewTotalSqlCrr);
-        JSONArray resultOverview =  kylinService.post2Kylin(overviewTotalSqlCrr);
-        JSONArray resultUnusualTypeSqlCrr =  kylinService.post2Kylin(unusualTypeSqlCrr);
-        JSONArray resultUnusualTradeTypeSqlCrr =  kylinService.post2Kylin(unusualTradeTypeSqlCrr);
+        JSONArray resultUnusualOverview =  kylinService.post2Kylin(unusualOverviewTotalSqlCrr,project);
+        JSONArray resultOverview =  kylinService.post2Kylin(overviewTotalSqlCrr,project);
+        JSONArray resultUnusualTypeSqlCrr =  kylinService.post2Kylin(unusualTypeSqlCrr,project);
+        JSONArray resultUnusualTradeTypeSqlCrr =  kylinService.post2Kylin(unusualTradeTypeSqlCrr,project);
         rtn.put("overview",parseOvervew(resultUnusualOverview,resultOverview));
         rtn.put("type",parseType(resultUnusualTypeSqlCrr));
         rtn.put("tradeType",parseTradeType(resultUnusualTradeTypeSqlCrr));
@@ -157,8 +160,8 @@ public class UnusualTransactionServiceImpl implements UnusualTransactionService 
             unusualRegionSqlCrr = String.format(unusualRegionSql,region);
             regionSqlCrr = String.format(regionSql,region);
         }
-        JSONArray resultUnusualRegionCrr =  kylinService.post2Kylin(unusualRegionSqlCrr);
-        JSONArray resultRegionCrr =  kylinService.post2Kylin(regionSqlCrr);
+        JSONArray resultUnusualRegionCrr =  kylinService.post2Kylin(unusualRegionSqlCrr,project);
+        JSONArray resultRegionCrr =  kylinService.post2Kylin(regionSqlCrr,project);
         rtn.put("region",parseRegion(resultUnusualRegionCrr,resultRegionCrr));
         return rtn;
     }
