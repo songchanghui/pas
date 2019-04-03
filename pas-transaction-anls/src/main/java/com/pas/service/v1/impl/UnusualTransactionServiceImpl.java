@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.pas.common.Dic;
 import com.pas.common.Format;
+import com.pas.common.PyCxAreaCoordMap;
 import com.pas.exception.PasException;
 import com.pas.service.v1.KylinService;
 import com.pas.service.v1.UnusualTransactionService;
@@ -12,8 +13,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -25,6 +28,11 @@ public class UnusualTransactionServiceImpl implements UnusualTransactionService 
     @Autowired
     @Qualifier(value = "kylinservice")
     private KylinService kylinService;
+
+    @Autowired
+    @Qualifier(value = "pycxareacoordmap")
+    private PyCxAreaCoordMap pyCxAreaCoordMap;
+
 
     @Value("${unusual.overview.total.sql}")
     private String  unusualOverviewTotalSql;
@@ -90,18 +98,6 @@ public class UnusualTransactionServiceImpl implements UnusualTransactionService 
         rtn.put("tradeType",parseTradeType(resultUnusualTradeTypeSqlCrr));
         return rtn;
     }
-    private JSONArray parseRegion(JSONArray resultUnusualRegionSqlCrr) {
-        JSONArray rtn = new JSONArray();
-        resultUnusualRegionSqlCrr.forEach(json ->{
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put("name",((JSONObject)json).get("NAME"));
-            jsonObject.put("totalAmount",((JSONObject)json).get("TOTALAMOUNT"));
-            jsonObject.put("totalNum",((JSONObject)json).get("TOTALNUM"));
-            jsonObject.put("totalShopNum",((JSONObject)json).get("TOTALSHOPNUM"));
-            rtn.add(jsonObject);
-        });
-        return rtn;
-    }
 
     private JSONArray parseType(JSONArray resultUnusualTypeSqlCrr) {
         JSONArray rtn = JSONArray.parseArray(resultUnusualTypeSqlCrr.toJSONString().toLowerCase());
@@ -161,9 +157,36 @@ public class UnusualTransactionServiceImpl implements UnusualTransactionService 
             unusualRegionSqlCrr = String.format(unusualRegionSql,region);
             regionSqlCrr = String.format(regionSql,region);
         }
-        JSONArray resultUnusualRegionSqlCrr =  kylinService.post2Kylin(unusualRegionSqlCrr);
-        JSONArray resultRegionSqlCrr =  kylinService.post2Kylin(regionSqlCrr);
-        rtn.put("region",parseRegion(resultUnusualRegionSqlCrr));
+        JSONArray resultUnusualRegionCrr =  kylinService.post2Kylin(unusualRegionSqlCrr);
+        JSONArray resultRegionCrr =  kylinService.post2Kylin(regionSqlCrr);
+        rtn.put("region",parseRegion(resultUnusualRegionCrr,resultRegionCrr));
+        return rtn;
+    }
+    private JSONArray parseRegion(JSONArray resultUnusualRegionCrr, JSONArray resultRegionCrr) {
+        Map<String,JSONObject> regionCrrMap = resultRegionCrr.stream().collect(Collectors.toMap(result->((JSONObject)result).getString("name"),result->(JSONObject)result, (key1, key2) -> key2));
+        JSONArray rtn = new JSONArray();
+        resultUnusualRegionCrr.forEach(json ->{
+            JSONObject jsonObject = new JSONObject();
+            String name = ((JSONObject)json).getString("NAME");
+            Double totalAmount = ((JSONObject)json).getDouble("TOTALAMOUNT");
+            Double totalNum = ((JSONObject)json).getDouble("TOTALNUM");
+            Double totalShopNum = ((JSONObject)json).getDouble("TOTALSHOPNUM");
+            Object[] value = new Object[4];
+            value[0] = pyCxAreaCoordMap.getByAreaDscr(name).getLongitud();
+            value[1] = pyCxAreaCoordMap.getByAreaDscr(name).getLatitude();
+            value[2] = totalNum;
+            value[3] = 2;
+            jsonObject.put("name",name);
+            jsonObject.put("value",value);
+            jsonObject.put("totalAmount",totalAmount);
+            jsonObject.put("totalNum",totalNum);
+            jsonObject.put("totalShopNum",totalShopNum);
+            JSONObject regionCrr =regionCrrMap.get(name);
+            jsonObject.put("totalAmountRate",Format.d2f(totalAmount/regionCrr.getDouble("TOTALAMOUNT")));
+            jsonObject.put("totalNumRate",Format.d2f(totalNum/regionCrr.getDouble("TOTALNUM")));
+            jsonObject.put("totalShopNumRate",Format.d2f(totalShopNum/regionCrr.getDouble("TOTALSHOPNUM")));
+            rtn.add(jsonObject);
+        });
         return rtn;
     }
 }

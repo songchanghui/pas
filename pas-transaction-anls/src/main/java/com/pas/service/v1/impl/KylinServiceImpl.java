@@ -40,6 +40,16 @@ public class KylinServiceImpl implements KylinService{
      */
     @Override
     public JSONArray post2Kylin(String sql) {
+        return post2Kylin(sql,kylinPostProject);
+    }
+    /**
+     * 向kylin发送restfaul 请求
+     * @param sql
+     * @param project
+     * @return JSONArray
+     */
+    @Override
+    public JSONArray post2Kylin(String sql,String project) {
 
         String code = "Basic "+new String(new Base64().encode((kylinPostUserName+":"+kylinPostUserPassword).getBytes()));
         HttpHeaders headers = new HttpHeaders();
@@ -47,7 +57,7 @@ public class KylinServiceImpl implements KylinService{
         headers.add("Authorization",code);
         JSONObject postData = new JSONObject();
         postData.put("sql",sql);
-        postData.put("project",kylinPostProject);
+        postData.put("project",project);
         postData.put("limit",kylinPostLimit);
         HttpEntity<String> entity = new HttpEntity<>(postData.toJSONString(), headers);
         JSONObject result = restTemplate.postForEntity(kylinPostApi,entity,JSONObject.class).getBody();

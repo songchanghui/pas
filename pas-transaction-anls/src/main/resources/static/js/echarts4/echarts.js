@@ -45598,7 +45598,7 @@ var treemapLayout = {
             // TODO
             // optimize: if out of view clip, do not layout.
             // But take care that if do not render node out of view clip,
-            // how to calculate start po
+            // how to calculate start vo
 
             var viewRootLayout = {
                 x: 0, y: 0,

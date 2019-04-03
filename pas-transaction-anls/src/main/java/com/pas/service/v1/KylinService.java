@@ -15,4 +15,12 @@ public interface KylinService {
      */
     JSONArray post2Kylin(String sql);
 
+    /**
+     * 向kylin发送restfaul 请求
+     * @param sql
+     * @param project
+     * @return JSONArray
+     */
+    JSONArray post2Kylin(String sql,String project);
+
 }

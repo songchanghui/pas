@@ -36,4 +36,9 @@ public class KylinResult2JsonTest {
         String str ="中国R";
         System.out.println(str.toLowerCase());
     }
+    @Test
+    public void test2(){
+        String s = "fasdf|广东";
+        System.out.println( s.split("\\|").length);
+    }
 }
