@@ -4,7 +4,7 @@ var setServiceMap = function(data){
     var intervalTime = 3000;//轮播时间间隔
     var chart_map = echarts.extendsMap('echarts', {
         bgColor: '#154e90',
-        mapName: '广东',
+        mapName: '福建',
         goDown: true,
         data:data
     });

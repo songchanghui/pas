@@ -311,7 +311,7 @@ echarts.extendsMap = function(id, opt){
                 left: 0,
                 top: 10,
                 style: {
-                    text: 'GuangDong',
+                    text: 'Fujian',
                     textAlign: 'center',
                     fill: style.textColor,
                     font: '12px "Microsoft YaHei", sans-serif',

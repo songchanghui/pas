@@ -31,6 +31,8 @@ var setCategoryAmount = function(data){
     });
     //设置异常交易-市交易金额top5
     var FdivContentChart02 = echarts.init(document.getElementById('f-div-content'));
+    console.log(unusualTransRegionSortAmountyAxisData)
+    console.log(unusualTransRegionSortAmountSeriesData)
     unusual_transaction_amount_option.yAxis[0].data = unusualTransRegionSortAmountyAxisData;
     unusual_transaction_amount_option.series[0].data = unusualTransRegionSortAmountSeriesData;
     FdivContentChart02.setOption(unusual_transaction_amount_option);
