@@ -2,12 +2,14 @@ package com.pas.common;
 
 import com.pas.vo.PyCxAreaCoord;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,11 +40,15 @@ public class PyCxAreaCoordMap implements InitializingBean {
      */
     private Map<String,Map<String,PyCxAreaCoord>> parNameMap;
 
+    @Autowired
+    private ResourceLoader resourceLoader;
+
     @Override
     public void afterPropertiesSet() throws Exception {
-        Path path = Paths.get(ClassLoader.getSystemResource("py_cx_area_coord.data").toURI());
+        Resource resource = resourceLoader.getResource("classpath:py_cx_area_coord.data");
+        InputStream inputStream = resource.getInputStream();
         //读取文件
-        BufferedReader bfr = Files.newBufferedReader(path);
+        BufferedReader bfr = new BufferedReader(new InputStreamReader(inputStream,"utf-8"));
         Stream<String> lines = bfr.lines();
         //构建区域信息list
         List<PyCxAreaCoord> pyCxAreaCoords =lines
