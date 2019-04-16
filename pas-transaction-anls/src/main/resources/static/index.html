@@ -20,136 +20,134 @@
     <script type="text/javascript" src="js/unusual-transaction-service.js"></script>
     <!--<script type="text/javascript" src="js/extendsMap.js"></script>-->
     <script type="text/javascript"  src="js/rem.js"></script>
-    <script>
-
-    </script>
-
 </head>
 <body>
-<h2 class="title">异常交易检测</h2>
-<!--<div class="time-box clearfix">-->
+    <h2 class="title">异常交易检测</h2>
+    <!--<div class="time-box clearfix">-->
     <!--<p class="time-box-title">时间</p>-->
     <!--<div class="time-list">-->
-        <!--<input type="date"  placeholder="xxxx年xx月xx日" />-->
+    <!--<input type="date"  placeholder="xxxx年xx月xx日" />-->
     <!--</div>-->
     <!--<span  class="line">—</span>-->
     <!--<div class="time-list">-->
-        <!--<input type="date" id="dpd2" placeholder="xxxx年xx月xx日" />-->
+    <!--<input type="date" id="dpd2" placeholder="xxxx年xx月xx日" />-->
     <!--</div>-->
     <!--<p class="time-box-title">机构</p>-->
     <!--<input type="text" id="dpd3" placeholder="" />-->
-<!--</div>-->
-<!-- 全省异常交易状况  -->
-<div  class="yichang-box">
-    <h3 class="common-h"><i></i>异常交易-概况</h3>
-    <ul class="yichang-ul">
-        <li>
-            <p class="s-title">异常交易-金额(万元)</p>
-            <h4 class="l-title" id="num1">0</h4>
-            <div  class="cslb-box" >
-                <h4 id="num1-rate0">38.5%</h4>
-                <p class="cslb">
-                    <i class="cslb-1" style="width:60%" id="num1-rate1"></i>
-                </p>
-            </div>
-        </li>
-        <li>
-            <p class="s-title">异常交易-笔数(笔)</p>
-            <h4 class="l-title" id="num2">0</h4>
-            <div  class="cslb-box" >
-                <h4 id="num2-rate0">38.5%</h4>
-                <p class="cslb">
-                    <i class="cslb-2" style="width:80%" id="num2-rate1"></i>
-                </p>
-            </div>
-        </li>
-        <li>
-            <p class="s-title">异常交易-服务点数(个)</p>
-            <h4 class="l-title" id="num3">0</h4>
-            <div  class="cslb-box" >
-                <h4 id="num3-rate0">38.5%</h4>
-                <p class="cslb">
-                    <i class="cslb-3" style="width:90%" id="num3-rate1"></i>
-                </p>
-            </div>
-        </li>
-    </ul>
+    <!--</div>-->
+    <!-- 全省异常交易状况  -->
+    <div  class="yichang-box">
+        <h3 class="common-h"><i></i>异常交易-概况</h3>
+        <ul class="yichang-ul">
+            <li>
+                <p class="s-title">异常交易-金额(万元)</p>
+                <h4 class="l-title" id="num1">0</h4>
+                <div  class="cslb-box" >
+                    <h4 id="num1-rate0">38.5%</h4>
+                    <p class="cslb">
+                        <i class="cslb-1" style="width:60%" id="num1-rate1"></i>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <p class="s-title">异常交易-笔数(笔)</p>
+                <h4 class="l-title" id="num2">0</h4>
+                <div  class="cslb-box" >
+                    <h4 id="num2-rate0">38.5%</h4>
+                    <p class="cslb">
+                        <i class="cslb-2" style="width:80%" id="num2-rate1"></i>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <p class="s-title">异常交易-服务点数(个)</p>
+                <h4 class="l-title" id="num3">0</h4>
+                <div  class="cslb-box" >
+                    <h4 id="num3-rate0">38.5%</h4>
+                    <p class="cslb">
+                        <i class="cslb-3" style="width:90%" id="num3-rate1"></i>
+                    </p>
+                </div>
+            </li>
+        </ul>
 
-</div>
-
-
-<!-- 全省异常交易类型占比 -->
-<div class="s-div">
-    <div class="percent-box percent-s">
-        <h3 class="common-h"><i></i>异常交易-异常类型占比</h3>
-        <div class="percent-content" id="PercentMain"></div>
     </div>
 
-    <div class="percent-box percent-s">
-        <h3 class="common-h"><i></i>异常交易-交易类型占比</h3>
-        <div class="percent-content" id="PercentMain02"></div>
+
+    <!-- 全省异常交易类型占比 -->
+    <div class="s-div">
+        <div class="percent-box percent-s">
+            <h3 class="common-h"><i></i>异常交易-异常类型占比</h3>
+            <div class="percent-content" id="PercentMain"></div>
+        </div>
+
+        <div class="percent-box percent-s">
+            <h3 class="common-h"><i></i>异常交易-交易类型占比</h3>
+            <div class="percent-content" id="PercentMain02"></div>
+        </div>
     </div>
-</div>
 
-<!-- 全省异常交易类型top5 -->
-<div class="f-div">
-    <h3 class="common-h"><i></i>异常交易-市交易金额top5</h3>
-    <div class="f-div-content" id="f-div-content"></div>
-</div>
-
-
-<div class="t-div">
-    <h3 class="common-h"><i></i>异常交易-市交易笔数top5</h3>
-    <div class="t-div-content" id="t-div-content"></div>
-</div>
-<!-- 地图 -->
-<div  class="div-map" >
-    <div id="echarts"></div>
-</div>
-
-<div class="region-list">
-    <ul class="region-name clearfix">
-        <li class="li1">地区</li>
-        <li class="li2">异常交易-金额(万元)</li>
-        <li class="li3">异常交易-笔数(笔)</li>
-        <li class="li4">异常交易-服务点数(个)</li>
-    </ul>
-    <marquee class="region-content" id="list" onMouseOver=this.stop() onMouseOut=this.start() scrollamount = 350 scrolldelay=5000 direction=up>
-        <li class="clearfix" id="template" style="display: none">
-            <div class="li1" id="region">广州</div>
-            <div class="li2">
-                <p class="region-num clearfix">
-                    <i id="region-amount">1122</i>
-                    <em id="region-amount-rate0">10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-1" id="region-amount-rate1" style="width:60%"></i>
-                </p>
-            </div>
-            <div class="li3" id="">
-                <p class="region-num clearfix">
-                    <i id="region-num">1122</i>
-                    <em id="region-num-rate0">10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-2" id="region-num-rate1" style="width:60%"></i>
-                </p>
-
-            </div>
-            <div class="li4">
-                <p class="region-num clearfix">
-                    <i id="region-service-num">1122</i>
-                    <em id="region-service-num-rate0">10%</em>
-                </p>
-                <p class="cslbb">
-                    <i class="cslb-3" id="region-service-num-rate1" style="width:60%"></i>
-                </p>
-            </div>
-        </li>
-    </marquee>
+    <!-- 全省异常交易类型top5 -->
+    <div class="f-div">
+        <h3 class="common-h"><i></i>异常交易-市交易金额top5</h3>
+        <div class="f-div-content" id="f-div-content"></div>
+    </div>
 
 
-</div>
+    <div class="t-div">
+        <h3 class="common-h"><i></i>异常交易-市交易笔数top5</h3>
+        <div class="t-div-content" id="t-div-content"></div>
+    </div>
+    <!-- 地图 -->
+    <div  class="div-map" >
+        <div id="echarts"></div>
+    </div>
+
+    <div class="region-list">
+        <ul class="region-name clearfix">
+            <li class="li1">地区</li>
+            <li class="li2">异常交易-金额(万元)</li>
+            <li class="li3">异常交易-笔数(笔)</li>
+            <li class="li4">异常交易-服务点数(个)</li>
+        </ul>
+        <marquee class="region-content" id="list" onMouseOver=this.stop() onMouseOut=this.start() scrollamount = 350 scrolldelay=5000 direction=up>
+            <ul >
+            <li class="clearfix" id="template" style="display: none">
+                <div class="li1" id="region">广州</div>
+                <div class="li2">
+                    <p class="region-num clearfix">
+                        <i id="region-amount">1122</i>
+                        <em id="region-amount-rate0">10%</em>
+                    </p>
+                    <p class="cslbb">
+                        <i class="cslb-1" id="region-amount-rate1" style="width:60%"></i>
+                    </p>
+                </div>
+                <div class="li3" id="">
+                    <p class="region-num clearfix">
+                        <i id="region-num">1122</i>
+                        <em id="region-num-rate0">10%</em>
+                    </p>
+                    <p class="cslbb">
+                        <i class="cslb-2" id="region-num-rate1" style="width:60%"></i>
+                    </p>
+
+                </div>
+                <div class="li4">
+                    <p class="region-num clearfix">
+                        <i id="region-service-num">1122</i>
+                        <em id="region-service-num-rate0">10%</em>
+                    </p>
+                    <p class="cslbb">
+                        <i class="cslb-3" id="region-service-num-rate1" style="width:60%"></i>
+                    </p>
+                </div>
+            </li>
+            </ul>
+        </marquee>
+
+
+    </div></div>
 <script type="text/javascript"  src="js/unusual-transation.js"></script>
 </body>
 </html>
