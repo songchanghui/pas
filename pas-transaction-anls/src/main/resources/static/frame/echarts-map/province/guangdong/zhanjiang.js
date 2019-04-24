@@ -23,7 +23,8 @@
             log('ECharts Map is not loaded');
             return;
         }
-        echarts.registerMap('zhanjiang', {
+        echarts.registerMap('zhanjiang',
+          {
                 "type": "FeatureCollection",
                 "features": [{
                     "type": "Feature",
