@@ -1,5 +1,8 @@
 package com.pas.common;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.pas.vo.PyCxAreaCoord;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,10 +48,13 @@ public class PyCxAreaCoordMap implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
+        Resource resourceRegion = resourceLoader.getResource("classpath:guandong.json");
+        JSONObject json = JSON.parseObject(resourceRegion.getInputStream(), JSONObject.class);
         Resource resource = resourceLoader.getResource("classpath:py_cx_area_coord.data");
         InputStream inputStream = resource.getInputStream();
         //读取文件
         BufferedReader bfr = new BufferedReader(new InputStreamReader(inputStream,"utf-8"));
+
         Stream<String> lines = bfr.lines();
         //构建区域信息list
         List<PyCxAreaCoord> pyCxAreaCoords =lines
@@ -72,6 +78,15 @@ public class PyCxAreaCoordMap implements InitializingBean {
         parNamelistMap.forEach((k,v)->{
             Map m = v.stream().collect(Collectors.toMap(pyCxAreaCoord->pyCxAreaCoord.getAreaDscr(),pyCxAreaCoord->pyCxAreaCoord, (key1, key2) -> key2));
             parNameMap.put(k,m);
+        });
+        //获取区域坐标数组
+        JSONArray features = json.getJSONArray("features");
+        Map<String,JSONArray> map = new HashMap<>(features.size());
+        features.forEach(feature ->{
+            JSONObject jsonFeature = (JSONObject)feature;
+            String name = jsonFeature.getJSONObject("properties").getString("name");
+            JSONArray coordinates = jsonFeature.getJSONObject("geometry").getJSONArray("coordinates").getJSONArray(0);
+            getAreaDscrMap().get(name).setCoordinates(coordinates.toArray());
         });
     }
 

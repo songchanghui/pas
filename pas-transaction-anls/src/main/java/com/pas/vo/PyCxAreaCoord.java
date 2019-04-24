@@ -30,7 +30,10 @@ public class PyCxAreaCoord {
      * 纬度
      */
     private String latitude;
-
+    /**
+     *区域坐标
+     */
+    private Object[] coordinates;
     public PyCxAreaCoord(String[] parms) {
         this.areaNoId = parms[0];
         this.areaDscr = parms[1];
@@ -86,5 +89,13 @@ public class PyCxAreaCoord {
 
     public void setLatitude(String latitude) {
         this.latitude = latitude;
+    }
+
+    public Object[] getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(Object[] coordinates) {
+        this.coordinates = coordinates;
     }
 }
